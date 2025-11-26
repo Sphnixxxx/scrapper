@@ -1,6 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 
+#GO To git bash
+#git config --global user.name "sagar"
+#git config --global user.email "asas@gmail.com"
+
 url ="https://books.toscrape.com/"
 def scrape_books(url):
     response=requests.get(url)

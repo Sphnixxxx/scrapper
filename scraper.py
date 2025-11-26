@@ -1,5 +1,6 @@
 import requests
 import json
+
 from bs4 import BeautifulSoup
 
 #GO To git bash
@@ -19,7 +20,7 @@ url ="https://books.toscrape.com/"
 def scrape_books(url):
     response=requests.get(url)
     if response.status_code!=200:
-        return
+        return []
     # handle all special character
     response.encoding=response.apparent_encoding
     soup=BeautifulSoup(response.text,"html.parser")
@@ -43,6 +44,5 @@ books=scrape_books(url)
 
 
 with open("books.json","w",encoding="utf-8") as f:
-    
     json.dump(books,f,indent=4,ensure_ascii=False)
     

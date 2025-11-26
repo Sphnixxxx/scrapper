@@ -1,9 +1,19 @@
 import requests
+import json
 from bs4 import BeautifulSoup
 
 #GO To git bash
-#git config --global user.name "sagar"
+#git config --global user.name "xyz"
 #git config --global user.email "asas@gmail.com"
+
+
+#git init 
+#git status ==> if you want to check what are the status of files
+#git diff ==> if you wanr too check what are the changes in the files
+#git add .
+#git commit -m "your message"
+#create repo 
+#copy paste
 
 url ="https://books.toscrape.com/"
 def scrape_books(url):
@@ -33,6 +43,6 @@ books=scrape_books(url)
 
 
 with open("books.json","w",encoding="utf-8") as f:
-    import json
+    
     json.dump(books,f,indent=4,ensure_ascii=False)
     
